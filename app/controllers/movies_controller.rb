@@ -6,6 +6,10 @@ class MoviesController < ApplicationController
 
   def show; end
 
+  def new
+
+  end
+
   def create
     @movie = Movie.new(movie_params)
     if @movie.save!
@@ -16,6 +20,14 @@ class MoviesController < ApplicationController
       respond_to do |format|
         format.json { render json: {error: 'error'} }
       end
+    end
+  end
+
+  def get_movie_details
+    allocine_url = params[:allocine_url]
+    @movie = ::Scrapper::ScrapperService.new.scrapper(allocine_url)
+    respond_to do |format|
+      format.json { render json: @movie }
     end
   end
 
