@@ -7,7 +7,10 @@ class MoviesController < ApplicationController
   def show; end
 
   def new
-
+    @movie = Movie.new(movie_params)
+    respond_to do |format|
+      format.text { render partial: 'movie/movie_validation', locals: { movie: @movie }, formats: [:html] }
+    end
   end
 
   def create
