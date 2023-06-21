@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :whishlists
   has_many :movies, through: :whislists
+  has_one_attached :photo
 end
