@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       post 'get_movie_details'
     end
   end
+  resources :categories, only: %i[create]
 end

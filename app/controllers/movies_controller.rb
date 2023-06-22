@@ -8,20 +8,25 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new(movie_params)
+    @categories = params[:category][:categories]
     respond_to do |format|
-      format.text { render partial: 'movie/movie_validation', locals: { movie: @movie }, formats: [:html] }
+      format.text { render partial: 'movies/movie', locals: { movie: @movie, categories: @categories }, formats: [:html] }
     end
   end
 
   def create
+    @categories = params[:categories][:categories]
     @movie = Movie.new(movie_params)
+    @categories.each do |category|
+      @movie.categories << Category.find_by(name: category)
+    end
     if @movie.save!
       respond_to do |format|
         format.json { render json: @movie }
       end
     else
       respond_to do |format|
-        format.json { render json: {error: 'error'} }
+        format.json { render json: { error: 'error' } }
       end
     end
   end
@@ -37,7 +42,7 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :rating, :number_of_votes, :length, :description, :realisator, :actors, :trailer_url)
+    params.require(:movie).permit(:title, :rating, :number_of_votes, :length, :description, :realisator, :actors, :trailer_url, :image_url)
   end
 
   def set_movie

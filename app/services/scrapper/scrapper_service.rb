@@ -12,6 +12,8 @@ module Scrapper
 
       title = html_doc.search(".titlebar-title-lg").text.strip
 
+      description = html_doc.search(".content-txt")[0].text.strip
+
       rating = html_doc.search(".stareval-note")[1].text.strip.to_f
 
       number_of_votes_area = html_doc.search(".stareval-review")[1].text.strip
@@ -44,6 +46,7 @@ module Scrapper
 
       hash_returned = {
         title: title,
+        description: description,
         rating: rating,
         number_of_votes: number_of_votes,
         direction: direction,
