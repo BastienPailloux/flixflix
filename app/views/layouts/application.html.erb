@@ -12,10 +12,12 @@
 
   <body>
     <div data-controller="add-movie">
-      <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
-      <%= yield %>
-      <%= render "shared/addMovie" %>
+      <div data-controller="wishlist">
+        <%= render "shared/navbar" %>
+        <%= render "shared/flashes" %>
+        <%= yield %>
+        <%= render "shared/addMovie" %>
+      </div>
     </div>
   </body>
 </html>

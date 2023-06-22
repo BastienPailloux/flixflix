@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :whishlists
+  has_many :whishlist
   has_many :movies, through: :whislists
   has_one_attached :photo
 end

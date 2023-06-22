@@ -39,6 +39,16 @@ class MoviesController < ApplicationController
     end
   end
 
+  def add_to_whishlist
+    @wishlist = Whishlist.new(user: current_user)
+    @movie = Movie.find_by(title: params[:movie_name])
+    @wishlist.movie = @movie
+    @wishlist.save!
+    respond_to do |format|
+      format.json { render json: @movie }
+    end
+  end
+
   private
 
   def movie_params

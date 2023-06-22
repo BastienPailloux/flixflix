@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :movies, only: %i[index show new create] do
     collection do
       post 'get_movie_details'
+      post 'add_to_whishlist'
     end
   end
   resources :categories, only: %i[create]
+  resources :whishlists, only: %i[create]
 end
