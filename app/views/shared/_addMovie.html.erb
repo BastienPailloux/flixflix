@@ -1,0 +1,13 @@
+<div class="addMovie d-none" data-add-movie-target="modal">
+  <h2>Ajouter un film</h2>
+  <form action="">
+    <input type="text" name="title" placeholder="Adresse allociné du film à ajouter" data-add-movie-target="title">
+    <input type="submit" value="Rechercher" data-action="click->add-movie#findMovie">
+  </form>
+  <div data-add-movie-target="new">
+  </div>
+  <div class="d-none" data-add-movie-target="buttons">
+    <a href="#" data-action="click->add-movie#refuse">Relancer la recherche</a>
+    <button data-action="click->add-movie#add">Ajouter</button>
+  </div>
+</div>

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :movies, only: %i[index show create]
-
+  resources :movies, only: %i[index show new create] do
+    collection do
+      post 'get_movie_details'
+    end
+  end
+  resources :categories, only: %i[create]
 end
