@@ -11,6 +11,6 @@ Rails.application.routes.draw do
       post 'add_to_whishlist'
     end
   end
-  resources :categories, only: %i[create]
-  resources :whishlists, only: %i[create]
+  resources :categories, only: %i[create show]
+  resources :whishlists, only: %i[index create]
 end

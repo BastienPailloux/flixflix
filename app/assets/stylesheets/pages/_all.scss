@@ -1,0 +1,22 @@
+h1, h2, h3 {
+  font-weight: 700;
+  color: $primary-dark;
+}
+
+h1 {
+  font-size: 36px
+}
+
+h2 {
+  font-size: 20px;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.container-body {
+  margin-bottom: 210px;
+  padding: 50px 100px;
+}

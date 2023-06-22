@@ -1,0 +1,7 @@
+<% @categories.each do |category| %>
+  <%= link_to category_path(category.id) do %>
+    <div class="card-category">
+      <p><%= category.name %></p>
+    </div>
+  <% end %>
+<% end %>

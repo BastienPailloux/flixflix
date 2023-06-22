@@ -1,0 +1,10 @@
+<div class="col-12 animal-searchbar">
+      <%= form_with url: movies_path, method: :get do %>
+        <div class="form-group has-search">
+          <i class="fas fa-search form-control-feedback"></i>
+          <div id="form" class="">
+            <%= text_field_tag :query, params[:query], placeholder: "Search a movie", class: "form-control string required" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
