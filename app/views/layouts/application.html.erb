@@ -13,10 +13,17 @@
   <body>
     <div data-controller="add-movie">
       <div data-controller="wishlist">
-        <%= render "shared/navbar" %>
+        <% if current_page?(root_path) %>
+          <%= render "shared/navbar_home" %>
+        <% else %>
+          <%= render "shared/navbar" %>
+        <% end %>
         <%= render "shared/flashes" %>
-        <%= yield %>
+        <div class="container-body">
+          <%= yield %>
+        </div>
         <%= render "shared/addMovie" %>
+        <%= render "shared/footer" %>
       </div>
     </div>
   </body>

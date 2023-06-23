@@ -1,3 +1,15 @@
-<h1>Pages#home</h1>
+<div class="header">
+  <div class="container">
+    <h1 id="title">Tous les meilleurs films au même endroit</h1>
+    <p class="sub-title sub-title-header">Où que vous soyez !</p>
+    <%= render 'shared/searchbar' %>
+  </div>
+</div>
 
-<%= render 'shared/cardMovie' %>
+<div class="categories">
+  <h2 class="sub-title">Categories</h2>
+  <div class="cards">
+    <%= render 'shared/cardCategory', locals: { categories: @categories } %>
+  </div>
+  <%= render 'shared/categoryHome', locals: { categories: @categories } %>
+</div>

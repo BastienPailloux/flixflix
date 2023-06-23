@@ -2,6 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="wishlist"
 export default class extends Controller {
+  static targets = ['hearth']
+
   connect() {
   }
 
@@ -20,5 +22,15 @@ export default class extends Controller {
     .then((data) => {
       console.log(data)
     })
+  }
+
+  over(event) {
+    event.target.classList.toggle('fa-regular')
+    event.target.classList.add('fa-solid')
+  }
+
+  out(event) {
+    event.target.classList.toggle('fa-solid')
+    event.target.classList.add('fa-regular')
   }
 }

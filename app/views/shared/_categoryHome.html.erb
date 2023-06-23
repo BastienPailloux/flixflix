@@ -1,0 +1,6 @@
+<% @categories.each do |category| %>
+  <div class="movies-by-category">
+    <h2 class="sub-title"><%= category.name %></h2>
+    <%= render 'shared/cardMovieShort',  category: category %>
+  </div>
+<% end %>

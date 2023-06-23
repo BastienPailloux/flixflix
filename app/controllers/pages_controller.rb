@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @movies = Movie.all
+    @categories = Category.all
   end
 end
