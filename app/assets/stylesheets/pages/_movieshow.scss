@@ -1,0 +1,32 @@
+.movie {
+  display:flex;
+}
+
+.movie-body {
+  margin-left: 70px;
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 16px 0px 8px 0px;
+  }
+}
+
+.movie-body-rating {
+  display:flex;
+  gap: 8px;
+  align-items: center;
+  .fa-solid {
+    color: rgb(255, 187, 0);
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.movie-body-category {
+  margin: 24px 4px 16px 0px;
+}

@@ -15,11 +15,12 @@
       <div data-controller="wishlist">
         <% if current_page?(root_path) %>
           <%= render "shared/navbar_home" %>
+          <div class="container-body-home">
         <% else %>
           <%= render "shared/navbar" %>
+          <div class="container-body">
         <% end %>
         <%= render "shared/flashes" %>
-        <div class="container-body">
           <%= yield %>
         </div>
         <%= render "shared/addMovie" %>
