@@ -11,8 +11,5 @@
   <div class="cards">
     <%= render 'shared/cardCategory', locals: { categories: @categories } %>
   </div>
-</div>
-<div class="movies-by-category">
-  <h2>Comedie</h2>
-  <%= render 'shared/cardMovie' %>
+  <%= render 'shared/categoryHome', locals: { categories: @categories } %>
 </div>

@@ -1,13 +1,15 @@
 <div data-add-movie-target="new">
-  <img src="<%= movie.image_url %>" alt="">
-  <h2><%= movie.title %></h2>
-  <%= movie.rating %>
-  <p>(<%= movie.number_of_votes %> votes)</p>
-  <%= categories %>
+  <img src="<%= @movie.image_url %>" alt="">
+  <h2><%= @movie.title %></h2>
+  <%= @movie.rating %>
+  <p>(<%=@movie.number_of_votes %> votes)</p>
+  <% @categories.each do |category| %>
+    <%= category.name %>
+  <% end %>
   <h3>Description</h3>
-  <%= movie.description %>
+  <%= @movie.description %>
   <h3>Réalisateurs</h3>
-  <%= movie.realisator %>
+  <%= @movie.realisator %>
   <h3>Casting</h3>
-  <%= movie.actors %>
+  <%= @movie.actors %>
 </div>

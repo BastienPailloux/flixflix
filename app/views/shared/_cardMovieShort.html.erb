@@ -1,0 +1,11 @@
+<div class="cards">
+  <% @movies.with_category(category).each do |movie| %>
+    <%= link_to movie_path(movie) do %>
+      <div class="card-movie-short" >
+        <img src="<%= movie.image_url %>" alt="">
+        <h2><%= movie.title %></h2>
+        <i class="fa-regular fa-heart" data-wishlist-target="hearth" data-action="click->wishlist#add mouseover->wishlist#over mouseleave->wishlist#out"></i>
+      </div>
+    <% end %>
+  <% end %>
+</div>

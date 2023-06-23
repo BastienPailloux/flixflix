@@ -4,6 +4,8 @@ class Movie < ApplicationRecord
   has_many :whishlists
   has_many :users, through: :whishlists
 
-  scope :with_category, ->(category_id) {
-    where('category_id == ?', category_id) }
+  scope :with_category, lambda { |category_id|
+    joins(:had_categories)
+      .where("had_categories.category_id = ?", category_id)
+  }
 end

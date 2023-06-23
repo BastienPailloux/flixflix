@@ -1,9 +1,47 @@
 .cards {
   display: flex;
+  gap: 16px;
 }
 
 .card-category {
   height: 260px;
   width: 260px;
-  background-color: $blue;
+  background-color: rgb(250, 188, 188);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 36px;
+  font-weight: 700;
+  color: $primary-dark;
+}
+
+
+
+.card-movie-short{
+  text-align: center;
+  img {
+    width: 193px;
+    height: 262px;
+  }
+  h2 {
+    color: $background-light;
+  }
+  .fa-regular {
+    color: $primary-dark;
+    font-size: 27px;
+    position: relative;
+    top: -280px;
+    left: 70px;
+    cursor: pointer;
+  }
+  .fa-solid {
+    color: $primary-dark;
+    font-size: 27px;
+    position: relative;
+    top: -280px;
+    left: 70px;
+    cursor: pointer;
+  }
 }

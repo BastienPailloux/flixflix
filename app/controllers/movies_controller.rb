@@ -4,7 +4,9 @@ class MoviesController < ApplicationController
     @movies = Movie.with_category
   end
 
-  def show; end
+  def show
+    @categories = @movie.categories
+  end
 
   def new
     @movie = Movie.new(movie_params)
