@@ -8,4 +8,9 @@ class Movie < ApplicationRecord
     joins(:had_categories)
       .where("had_categories.category_id = ?", category_id)
   }
+
+  scope :wishlisted, lambda { |current_user|
+    joins(:whishlists)
+      .where("whishlists.user_id = ?", current_user.id)
+  }
 end
