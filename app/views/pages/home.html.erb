@@ -7,9 +7,13 @@
 </div>
 
 <div class="categories">
-  <h2 class="sub-title">Categories</h2>
-  <div class="cards">
-    <%= render 'shared/cardCategory', locals: { categories: @categories } %>
-  </div>
-  <%= render 'shared/categoryHome', locals: { categories: @categories } %>
+  <% if @categories.empty? %>
+    <p>Pas encore de catégorie</p>
+  <% else %>
+    <h2 class="sub-title">Categories</h2>
+    <div class="cards">
+      <%= render 'shared/cardCategory', locals: { categories: @categories } %>
+    </div>
+    <%= render 'shared/categoryHome', locals: { categories: @categories } %>
+  <% end %>
 </div>
