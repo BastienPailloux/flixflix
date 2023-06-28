@@ -6,7 +6,14 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def show
+    @categories = Category.all
+    @category = Category.find(params[:id])
+    @movies = Movie.with_category(@category)
+  end
+
   private
+
   def category_params
     params.require(:category).permit(:name)
   end
