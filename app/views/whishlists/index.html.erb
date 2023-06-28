@@ -1,0 +1,9 @@
+<h1>My Wishlist</h1>
+
+<% if @movies.empty? %>
+  <p>You don't have any movie in your Wishlist</p>
+<% else%>
+  <div class='cards'>
+    <%= render 'categories/movie', locals: { movies: @movies} %>
+  </div>
+<% end %>
